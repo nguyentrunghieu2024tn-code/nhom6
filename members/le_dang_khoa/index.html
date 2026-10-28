@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - LÊ ĐĂNG KHOA - Portfolio</title>
+    <!-- SCRIPT CHỐNG CHỚP GIAO DIỆN KHI LOAD -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("uiTheme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode-init");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <!-- PAGE TRANSITION OVERLAY -->
+    <div id="page-transition" class="page-transition">
+        <div class="transition-title">LDK</div>
+    </div>
+
+    <!-- PRELOADER EXPERIMENTAL -->
+    <div id="preloader">
+        <div class="preloader-panel panel-left"></div>
+        <div class="preloader-panel panel-right"></div>
+        
+        <div class="preloader-content">
+            <div class="loader-tag">[ LDK // 2026 ]</div>
+            <h1 class="loader-glitch" data-text="LDK">LDK</h1>
+            
+            <div class="loader-counter-wrapper">
+                <span id="loadCounter">00</span><span class="symbol">%</span>
+            </div>
+            
+            <div class="loader-bar-frame">
+                <div id="loaderBar" class="loader-bar-fill"></div>
+            </div>
+            <div class="loader-status" id="loaderStatus">SYSTEM INITIALIZING...</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline">
+        <span class="cursor-text"></span>
+    </div>
+
+    <!-- Viewfinder Overlay & Scroll Progress -->
+    <div class="camera-overlay">
+        <div class="cam-top-left">CAMERA 01 &bull; <span id="scrollPercent">00% SCRL</span></div>
+        <div class="cam-top-right">7:4 <i class="fas fa-battery-three-quarters"></i></div>
+        <div class="cam-bottom-left" id="liveClock">00:00:00 ICT</div>
+        <div class="cam-bottom-right">KEYBINDS: [1]HM [2]WRK [3]DIR [4]ABT [5]CTC</div>
+    </div>
+
+    <!-- Scroll Progress Indicator Top Bar -->
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+
+    <!-- Main Header Navigation -->
+    <header class="main-header">
+        <a href="index.html" class="logo hover-target" title="Trang chủ (Phím 1)">
+            LDK
+        </a>
+
+        <nav class="nav-center">
+            <ul>
+                <li><a href="works.html" class="hover-target">WORKS</a></li>
+                <li><a href="directors.html" class="hover-target">EXPERTISE</a></li>
+                <li><a href="about.html" class="hover-target">ABOUT</a></li>
+                <li><a href="contact.html" class="hover-target">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-tools">
+            <div class="sound-toggle hover-target" id="soundToggle" title="Bật/Tắt Âm Thanh UI">
+                <i class="fas fa-volume-mute"></i>
+            </div>
+            <div class="theme-toggle hover-target" id="themeToggle" title="Đổi Giao Diện">
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="glitch-branding">
+            <h1 class="glitch" data-text="LE DANG KHOA">LE DANG KHOA</h1>
+            <p class="subtitle"><span class="typing-text"></span><span class="cursor">&nbsp;</span></p>
+        </div>
+
+        <div class="floating-cards-container">
+            <div class="float-card card-1 hover-target">
+                <!-- Sửa link ảnh 1 hoạt động ổn định -->
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Visual 1">
+            </div>
+            <div class="float-card card-2 hover-target">
+                <img src="images/hinh.jpg" alt="Visual 2">
+            </div>
+            <div class="float-card card-3 hover-target">
+                <img src="images/khoaart.jpg" alt="Visual 3">
+            </div>
+        </div>
+
+        <div class="hero-bottom-info">
+            <p>"Tôi là một người thích suy nghĩ ra những ý tưởng, sáng tạo và biến chúng thành sản phẩm."</p>
+            <div class="cta-buttons">
+                <a href="works.html" class="btn btn-primary hover-target">XEM DỰ ÁN <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-secondary hover-target">LIÊN HỆ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Kinetic Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>CAPCUT PRO</span> &bull; <span>DAVINCI RESOLVE</span> &bull; <span>STREET CULTURE</span> &bull; <span>FAST PACED EDITING</span> &bull; <span>COLOR GRADING</span> &bull; <span>DYNAMIC VISUALS</span> &bull; 
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+            <span>CAPCUT PRO</span> &bull; <span>DAVINCI RESOLVE</span> &bull; <span>STREET CULTURE</span> &bull; <span>FAST PACED EDITING</span> &bull; <span>COLOR GRADING</span> &bull; <span>DYNAMIC VISUALS</span> &bull; 
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LÊ ĐĂNG KHOA. INSPIRED BY ANTIANTIART. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

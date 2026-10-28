@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LÊ ĐĂNG KHOA - Portfolio</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("uiTheme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode-init");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <!-- PRELOADER EXPERIMENTAL -->
+    <div id="preloader">
+        <div class="preloader-panel panel-left"></div>
+        <div class="preloader-panel panel-right"></div>
+        
+        <div class="preloader-content">
+            <div class="loader-tag">[ LDK // 2026 ]</div>
+            <h1 class="loader-glitch" data-text="LDK">LDK</h1>
+            
+            <div class="loader-counter-wrapper">
+                <span id="loadCounter">00</span><span class="symbol">%</span>
+            </div>
+            
+            <div class="loader-bar-frame">
+                <div id="loaderBar" class="loader-bar-fill"></div>
+            </div>
+            <div class="loader-status" id="loaderStatus">SYSTEM INITIALIZING...</div>
+        </div>
+    </div>
+
+    <div id="page-transition" class="page-transition">
+        <div class="transition-title">LDK</div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline">
+        <span class="cursor-text"></span>
+    </div>
+
+    <div class="camera-overlay">
+        <div class="cam-top-left">CAMERA 01 &bull; <span id="scrollPercent">00% SCRL</span></div>
+        <div class="cam-top-right">7:4 <i class="fas fa-battery-three-quarters"></i></div>
+        <div class="cam-bottom-left" id="liveClock">00:00:00 ICT</div>
+        <div class="cam-bottom-right">KEYBINDS: [1]HM [2]WRK [3]DIR [4]ABT [5]CTC</div>
+    </div>
+
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo hover-target">LDK</a>
+        <nav class="nav-center">
+            <ul>
+                <li><a href="works.html" class="hover-target">WORKS</a></li>
+                <li><a href="directors.html" class="hover-target">EXPERTISE</a></li>
+                <li><a href="about.html" class="hover-target">ABOUT</a></li>
+                <li><a href="contact.html" class="hover-target active-link">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="header-tools">
+            <div class="sound-toggle hover-target" id="soundToggle"><i class="fas fa-volume-mute"></i></div>
+            <div class="theme-toggle hover-target" id="themeToggle"><i class="fas fa-sun"></i></div>
+        </div>
+    </header>
+
+    <main class="page-container contact-page">
+    
+    <!-- KHỐI HERO CONTACT -->
+    <section class="contact-hero">
+        <div class="contact-hero-bg">
+            <!-- Ảnh hoặc Video nền nghệ thuật -->
+            <img src="images/khoaart.jpg" alt="Contact Hero BG">
+        </div>
+        
+        <div class="contact-hero-content">
+            <h1 class="glitch-title">Start the madness</h1>
+            
+            <div class="contact-quick-info">
+                <div class="info-col">
+                    <span class="label">EMAIL</span>
+                    <a href="mailto:khoaleecontact@gmail.com" class="hover-target">khoaleecontact@gmail.com</a>
+                </div>
+                
+                <div class="info-col">
+                    <span class="label">ADDRESS</span>
+                    <p>HO CHI MINH CITY, VIETNAM</p>
+                </div>
+
+                <div class="info-col">
+                    <span class="label">PHONE</span>
+                    <p>+84 (0) 90X XXX XXX</p>
+                </div>
+
+                <div class="info-col social-col">
+                    <span class="label">SOCIALS</span>
+                    <div class="social-tags">
+                        <a href="https://www.facebook.com/KhoaLeezzz" class="hover-target">FACEBOOK</a>
+                        <a href="https://www.instagram.com/_.dkhoa/" class="hover-target">INSTAGRAM</a>
+                        <a href="https://www.youtube.com/@KhoaLee06" class="hover-target">YOUTUBE</a>
+                        <a href="https://github.com/LeKho-a" class="hover-target">GITHUB</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KHỐI INQUIRY MATRIX FORM -->
+    <section class="inquiry-section">
+        <form id="matrixContactForm" class="matrix-form">
+
+            <!-- SUBMIT BUTTON -->
+            <div class="form-submit-row">
+                <button type="submit" class="submit-matrix-btn hover-target">
+                    <span>Let it through</span> <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div id="matrixAlert" class="alert-box"></div>
+        </form>
+    </section>
+
+</main>
+
+    <footer>
+        <p>&copy; 2026 LÊ ĐĂNG KHOA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
