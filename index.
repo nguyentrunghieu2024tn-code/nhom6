@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 6 | Portal Dự Án & Portfolio Thành Viên</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --accent: #ec4899;
+            --cyan: #06b6d4;
+            --bg-main: #070a13;
+            --bg-card: rgba(16, 22, 38, 0.75);
+            --border: rgba(51, 65, 85, 0.6);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient background glow */
+        .glow-1 {
+            position: fixed;
+            top: -100px;
+            right: -100px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-2 {
+            position: fixed;
+            bottom: -100px;
+            left: -100px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 0;
+            flex: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--cyan), var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        .section-title i {
+            color: var(--cyan);
+        }
+
+        /* Member Grid */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .member-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        .avatar-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            color: #fff;
+            margin-bottom: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+        }
+
+        .member-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .member-role {
+            font-size: 13.5px;
+            color: var(--cyan);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .member-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .member-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .member-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Exercise Links Grid */
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .exercise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .exercise-card:hover {
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.8);
+            transform: translateX(4px);
+        }
+
+        .exercise-card span {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .exercise-card i {
+            color: var(--cyan);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="badge">
+                <i class="fa-solid fa-users"></i> Nhóm 6 - UTH
+            </div>
+            <h1>CỔNG DỰ ÁN & BÀI TẬP NHÓM</h1>
+            <p class="subtitle">Trường Đại học Giao thông Vận tải TP.HCM | Lập trình Web & Ứng dụng AI</p>
+        </header>
+
+        <!-- Thành viên nhóm -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-id-card"></i> Thành Viên Nhóm 6</h2>
+            <div class="member-grid">
+                <!-- 1. Nguyễn Trung Hiếu -->
+                <div class="member-card">
+                    <div class="avatar-circle">NTH</div>
+                    <h3 class="member-name">Nguyễn Trung Hiếu</h3>
+                    <div class="member-role">Khoa học dữ liệu & AI</div>
+                    <p class="member-desc">Trưởng nhóm. Phụ trách Machine Learning, tích hợp mô hình dữ liệu và thiết kế giao diện Dark/Sci-Fi.</p>
+                    <a href="hieu/index.html" class="member-btn">
+                        <i class="fa-solid fa-user-tie"></i> Xem Portfolio
+                    </a>
+                </div>
+
+                <!-- 2. Bách Nguyễn -->
+                <div class="member-card">
+                    <div class="avatar-circle">BN</div>
+                    <h3 class="member-name">BachNguyen1907</h3>
+                    <div class="member-role">Frontend / Web Developer</div>
+                    <p class="member-desc">Phụ trách phát triển thành phần giao diện người dùng, responsive design và hiệu ứng tương tác.</p>
+                    <a href="bach/index.html" class="member-btn">
+                        <i class="fa-solid fa-user-tie"></i> Xem Portfolio
+                    </a>
+                </div>
+
+                <!-- 3. Khoa -->
+                <div class="member-card">
+                    <div class="avatar-circle">MK</div>
+                    <h3 class="member-name">Mkhoa-blip</h3>
+                    <div class="member-role">Backend / Data Processing</div>
+                    <p class="member-desc">Phụ trách xử lý luồng dữ liệu, API, lưu trữ cơ sở dữ liệu và quản lý cấu trúc repository.</p>
+                    <a href="khoa/index.html" class="member-btn">
+                        <i class="fa-solid fa-user-tie"></i> Xem Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Danh sách bài tập thực hành tuần -->
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Bài Tập Thực Hành (Tuần 6)</h2>
+            <div class="exercise-grid">
+                <a href="bai2c.html" class="exercise-card">
+                    <span>Bài 2c - Chọn loại cafe</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="bai2d.html" class="exercise-card">
+                    <span>Bài 2d - Form định dạng màu</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="bai3.html" class="exercise-card">
+                    <span>Bài 3 - Đổi ảnh ngẫu nhiên (Play/Stop)</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nhóm 6 - UTH. Kho lưu trữ mã nguồn mở trên GitHub.</p>
+    </footer>
+</body>
+</html>
