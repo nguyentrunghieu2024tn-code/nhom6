@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - LÊ ĐĂNG KHOA - Portfolio</title>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("uiTheme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode-init");
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-panel panel-left"></div>
+        <div class="preloader-panel panel-right"></div>
+
+        <div class="preloader-content">
+            <div class="loader-tag">[ LDK // 2026 ]</div>
+            <h1 class="loader-glitch" data-text="LDK">LDK</h1>
+
+            <div class="loader-counter-wrapper">
+                <span id="loadCounter">00</span><span class="symbol">%</span>
+            </div>
+
+            <div class="loader-bar-frame">
+                <div id="loaderBar" class="loader-bar-fill"></div>
+            </div>
+            <div class="loader-status" id="loaderStatus">SYSTEM INITIALIZING...</div>
+        </div>
+    </div>
+
+    <div id="page-transition" class="page-transition">
+        <div class="transition-title">LDK</div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline">
+        <span class="cursor-text"></span>
+    </div>
+
+    <div class="camera-overlay">
+        <div class="cam-top-left">CAMERA 01 &bull; <span id="scrollPercent">00% SCRL</span></div>
+        <div class="cam-top-right">7:4 <i class="fas fa-battery-three-quarters"></i></div>
+        <div class="cam-bottom-left" id="liveClock">00:00:00 ICT</div>
+        <div class="cam-bottom-right">KEYBINDS: [1]HM [2]WRK [3]DIR [4]ABT [5]CTC</div>
+    </div>
+
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo hover-target">LDK</a>
+        <nav class="nav-center">
+            <ul>
+                <li><a href="works.html" class="hover-target active-link">WORKS</a></li>
+                <li><a href="directors.html" class="hover-target">EXPERTISE</a></li>
+                <li><a href="about.html" class="hover-target">ABOUT</a></li>
+                <li><a href="contact.html" class="hover-target">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="header-tools">
+            <div class="sound-toggle hover-target" id="soundToggle"><i class="fas fa-volume-mute"></i></div>
+            <div class="theme-toggle hover-target" id="themeToggle"><i class="fas fa-sun"></i></div>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <section class="portfolio">
+            <div class="section-header">
+                <h2 class="section-title">SELECTED WORKS</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active hover-target" data-filter="all">ALL <sup>09</sup></button>
+                    <button class="filter-btn hover-target" data-filter="tiktok">MUSIC VIDEO <sup>01</sup></button>
+                    <button class="filter-btn hover-target" data-filter="cinematic">COMMERCIAL <sup>01</sup></button>
+                    <button class="filter-btn hover-target" data-filter="vlog">SHORT FILM <sup>07</sup></button>
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #01"
+                    data-desc="Dự án dựng Music Video nhịp độ nhanh, tập trung vào hiệu ứng chuyển cảnh Kinetic typography và sync nhịp âm thanh sôi động."
+                    data-software="CapCut Pro, DaVinci Resolve">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 1">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°01</span>
+                        <h3>DYNAMIC EDIT #01</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #02"
+                    data-desc="Xử lý màu sắc chuẩn Cinematic cho video quảng cáo thời trang đường phố (Streetwear). Tối ưu tông màu tối Cyberpunk."
+                    data-software="DaVinci Resolve">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 2">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°02</span>
+                        <h3>DYNAMIC EDIT #02</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #03"
+                    data-desc="Phim ngắn ghi lại nhịp sống Sài Gòn về đêm với màu sắc hoài niệm, kết hợp Sound Design chân thực."
+                    data-software="CapCut Pro, Premiere Pro">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 3">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°03</span>
+                        <h3>DYNAMIC EDIT #03</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #04"
+                    data-desc="Phim ngắn ghi lại nhịp sống Sài Gòn về đêm với màu sắc hoài niệm, kết hợp Sound Design chân thực."
+                    data-software="CapCut Pro, Premiere Pro">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 4">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°04</span>
+                        <h3>DYNAMIC EDIT #04</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #05"
+                    data-desc="Phim ngắn ghi lại nhịp sống Sài Gòn về đêm với màu sắc hoài niệm, kết hợp Sound Design chân thực."
+                    data-software="CapCut Pro, Premiere Pro">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 5">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°05</span>
+                        <h3>DYNAMIC EDIT #05</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #06"
+                    data-desc="Phim ngắn ghi lại nhịp sống Sài Gòn về đêm với màu sắc hoài niệm, kết hợp Sound Design chân thực."
+                    data-software="CapCut Pro, Premiere Pro">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 6">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°06</span>
+                        <h3>DYNAMIC EDIT #06</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="portfolio-item hover-target" data-category="tiktok" data-video="assets/Oanh M = Thuoc.mp4"
+                    data-title="DYNAMIC EDIT #07"
+                    data-desc="Phim ngắn ghi lại nhịp sống Sài Gòn về đêm với màu sắc hoài niệm, kết hợp Sound Design chân thực."
+                    data-software="CapCut Pro, Premiere Pro">
+                    <div class="item-thumb">
+                        <img src="images/TWJE.gif" alt="Work 7">
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div class="item-info">
+                        <span class="item-no">N°07</span>
+                        <h3>DYNAMIC EDIT #07</h3>
+                        <p class="meta">MUSIC VIDEO // 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- VIDEO LIGHTBOX MODAL -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content brutal-box">
+            <button class="modal-close hover-target" id="modalClose">&times; ESC</button>
+            <div class="video-container">
+                <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+                <video id="modalVideo" controls style="display:none;"></video>
+            </div>
+            <div class="modal-details">
+                <h2 id="modalTitle">PROJECT TITLE</h2>
+                <p id="modalDesc">Project description goes here...</p>
+                <div class="modal-meta">
+                    <span><strong>TOOLS:</strong> <i id="modalSoftware">Software</i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LÊ ĐĂNG KHOA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
