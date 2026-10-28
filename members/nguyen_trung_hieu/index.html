@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Trung Hiếu | Portfolio & Digital CV (Data Science & AI)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS Tự viết -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark">
+    <!-- Hiệu ứng hạt sáng & lưới mờ làm nền cực xịn -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Thanh điều hướng (Navbar) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="code-bracket">&lt;</span>Hiếu<span class="accent">.AI</span><span class="code-bracket">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link active">Giới thiệu</a>
+                <a href="#skills" class="nav-link">Kỹ năng</a>
+                <a href="#projects" class="nav-link">Dự án</a>
+                <a href="#education" class="nav-link">Học vấn</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="btn-icon" title="Chuyển chế độ Sáng/Tối">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button onclick="window.print()" class="btn btn-outline btn-sm print-btn">
+                    <i class="fa-solid fa-print"></i> <span>In CV / Lưu PDF</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero / Giới thiệu -->
+        <section id="about" class="section hero-section">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="badge-status">
+                        <span class="status-dot"></span> Đang học tập &amp; Sẵn sàng thực tập
+                    </div>
+                    <h1 class="hero-title">Xin chào, tôi là <br><span class="highlight-name">NGUYỄN TRUNG HIẾU</span></h1>
+                    <h2 class="hero-subtitle">Khoa học dữ liệu &amp; Trí tuệ nhân tạo (AI) - UTH</h2>
+                    <p class="hero-desc">
+                        Sinh viên ngành <strong>Khoa học dữ liệu và AI</strong> tại <strong>Trường Đại học Giao thông Vận tải TP.HCM (UTH)</strong>. Đam mê phân tích dữ liệu, Machine Learning, phát triển các mô hình AI giải quyết bài toán thực tế và ứng dụng web thông minh.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> Xem dự án</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> Liên hệ ngay</a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="mailto:nguyentrunghieu2024tn@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:0367889745" title="Điện thoại"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://github.com/trunghieu2202" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Khung Avatar đã thu nhỏ cực xịn giống mẫu melissa -->
+                    <div class="avatar-card">
+                        <div class="avatar-ring-outer"></div>
+                        <div class="avatar-ring-inner"></div>
+                        <div class="avatar-wrapper">
+                            <!-- Đặt ảnh của bạn: images/avatar.jpg, nếu không có sẽ dùng mặc định -->
+                            <img src="images/avatar.jpg" alt="Nguyễn Trung Hiếu" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+                            <div id="avatar-fallback" class="avatar-placeholder" style="display: none;">
+                                <span>NTH</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge fb-1">
+                            <i class="fa-brands fa-python"></i> Python / AI
+                        </div>
+                        <div class="floating-badge fb-2">
+                            <i class="fa-solid fa-chart-line"></i> Data Science
+                        </div>
+                        <div class="floating-badge fb-3">
+                            <i class="fa-solid fa-brain"></i> ML / AI
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kỹ năng chuyên môn -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Kỹ Năng Chuyên Môn</h2>
+                    <p class="section-subtitle">Công cụ và ngôn ngữ phục vụ Khoa học dữ liệu, AI và Lập trình Web</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-brain"></i>
+                            <h3>Khoa Học Dữ Liệu &amp; AI</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info"><span>Python (NumPy, Pandas, Matplotlib)</span> <span>85%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Machine Learning (Scikit-Learn)</span> <span>75%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Deep Learning &amp; Computer Vision</span> <span>65%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Xử lý &amp; Trực quan hóa dữ liệu</span> <span>80%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-database"></i>
+                            <h3>Cơ Sở Dữ Liệu &amp; Web</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info"><span>SQL / MySQL / PostgreSQL</span> <span>80%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>HTML5, CSS3, JavaScript cơ bản</span> <span>80%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Flask / FastAPI (Triển khai mô hình)</span> <span>70%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>RESTful API &amp; JSON</span> <span>75%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-toolbox"></i>
+                            <h3>Công Cụ &amp; Kỹ Năng Mềm</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>
+                                <div class="skill-info"><span>Git / GitHub</span> <span>80%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Jupyter Notebook / Google Colab</span> <span>90%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Tư duy phân tích &amp; Giải quyết vấn đề</span> <span>85%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                            </li>
+                            <li>
+                                <div class="skill-info"><span>Đọc tài liệu tiếng Anh</span> <span>75%</span></div>
+                                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dự án nổi bật -->
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Dự Án Nổi Bật</h2>
+                    <p class="section-subtitle">Các đồ án và bài toán phân tích dữ liệu, ứng dụng AI đã thực hiện</p>
+                </div>
+
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="ai">AI / Data Science</button>
+                    <button class="filter-btn" data-filter="web">Ứng dụng Web</button>
+                </div>
+
+                <div class="project-grid">
+                    <div class="project-card" data-category="ai">
+                        <div class="project-banner banner-traffic">
+                            <div class="banner-icon"><i class="fa-solid fa-traffic-light"></i></div>
+                            <span class="banner-label">Data Analysis &amp; Forecasting</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Scikit-Learn</span>
+                            </div>
+                            <h3 class="project-title">Phân Tích &amp; Dự Báo Dữ Liệu Giao Thông</h3>
+                            <p class="project-desc">Mô hình phân tích luồng phương tiện và dự đoán tình trạng ùn tắc giao thông đô thị dựa trên dữ liệu lịch sử và thuật toán hồi quy.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem báo cáo</a>
+                                <a href="#" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ai">
+                        <div class="project-banner banner-vision">
+                            <div class="banner-icon"><i class="fa-solid fa-camera"></i></div>
+                            <span class="banner-label">Computer Vision &amp; Deep Learning</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>OpenCV</span>
+                                <span>TensorFlow</span>
+                                <span>CNN</span>
+                            </div>
+                            <h3 class="project-title">Nhận Diện Biển Báo Giao Thông Tự Động</h3>
+                            <p class="project-desc">Ứng dụng thị giác máy tính phát hiện và phân loại biển báo chỉ dẫn đường bộ với độ chính xác cao phục vụ hỗ trợ lái xe an toàn.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a href="#" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="web">
+                        <div class="project-banner banner-dashboard">
+                            <div class="banner-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <span class="banner-label">Web Visualization</span>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <h3 class="project-title">Interactive Data Dashboard</h3>
+                            <p class="project-desc">Hệ thống trang bảng điều khiển (Dashboard) trực quan hóa các chỉ số thống kê, biểu đồ tương tác thời gian thực với chế độ Dark/Light mode.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                                <a href="#" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Học vấn & Quá trình -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Học Vấn &amp; Mục Tiêu</h2>
+                    <p class="section-subtitle">Chặng đường học tập tại Trường Đại học Giao thông Vận tải TP.HCM</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Hiện tại</div>
+                        <div class="timeline-content">
+                            <h3>Ngành Khoa học dữ liệu &amp; Trí tuệ nhân tạo (AI)</h3>
+                            <h4>Trường Đại học Giao thông Vận tải TP.HCM (UTH)</h4>
+                            <p>
+                                Tập trung nghiên cứu về Xác suất thống kê, Đại số tuyến tính cho Machine Learning, Cấu trúc dữ liệu &amp; Giải thuật, Kỹ thuật trích xuất dữ liệu, và phát triển các mô hình Trí tuệ nhân tạo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Mục tiêu phát triển</div>
+                        <div class="timeline-content">
+                            <h3>Trở thành Kỹ sư Dữ liệu / AI Engineer</h3>
+                            <h4>Định hướng chuyên môn</h4>
+                            <p>
+                                Tham gia các dự án nghiên cứu, áp dụng AI vào tối ưu hóa vận hành, logistics, giao thông thông minh và các giải pháp phân tích dữ liệu lớn.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liên hệ -->
+        <section id="contact" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Kết Nối Với Tôi</h2>
+                    <p class="section-subtitle">Sẵn sàng trao đổi về cơ hội thực tập, dự án nghiên cứu hoặc hợp tác phát triển</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Thông tin cá nhân</h3>
+                        <p class="contact-desc">Mọi thông tin liên lạc chi tiết của tôi:</p>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-user"></i>
+                            <div>
+                                <span>Họ và tên</span>
+                                <p>Nguyễn Trung Hiếu</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <div>
+                                <span>Ngày sinh</span>
+                                <p>22/02/2006</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div>
+                                <span>Trường đại học</span>
+                                <p>Đại học Giao thông Vận tải TP.HCM (UTH)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Email</span>
+                                <p>nguyentrunghieu2024tn@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Điện thoại</span>
+                                <p>0367889745</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi tin nhắn! Hiếu sẽ phản hồi sớm nhất qua email.');">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Tên của bạn *</label>
+                                <input type="text" id="name" required placeholder="Họ và tên người liên hệ">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required placeholder="email@domain.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Tiêu đề</label>
+                            <input type="text" id="subject" placeholder="Cơ hội thực tập / Trao đổi dự án AI">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nội dung tin nhắn *</label>
+                            <textarea id="message" rows="4" required placeholder="Nội dung trao đổi..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Tin Nhắn
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chân trang -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Nguyễn Trung Hiếu. Sinh viên Khoa học dữ liệu &amp; AI - ĐH Giao thông Vận tải TP.HCM (UTH).</p>
+            <div class="footer-links">
+                <a href="#about">Đầu trang</a>
+                <a href="#projects">Dự án</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
