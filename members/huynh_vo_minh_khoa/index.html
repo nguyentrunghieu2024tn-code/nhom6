@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #263449;
+            background: #f2f6fc;
+        }
+
+        header {
+            padding: 45px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #163a70, #3284d8);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 12px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 4px 10px;
+            color: #1d4e89;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        main {
+            width: 90%;
+            max-width: 950px;
+            margin: 28px auto;
+        }
+
+        section {
+            margin-bottom: 22px;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(31, 57, 91, 0.08);
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            margin-top: 0;
+            padding-bottom: 8px;
+            color: #1e40af;
+            border-bottom: 2px solid #dbeafe;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .profile img {
+            display: block;
+            width: 165px;
+            height: 210px;
+            object-fit: cover;
+            object-position: center top;
+            border: 4px solid #dbeafe;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.12);
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .highlight {
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #d7e2f0;
+        }
+
+        th {
+            color: white;
+            background: #2856a6;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f3f7fd;
+        }
+
+        .contact a {
+            color: #1d4ed8;
+        }
+
+        footer {
+            padding: 22px 15px;
+            text-align: center;
+            color: white;
+            background: #172554;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav {
+                position: static;
+            }
+
+            nav a {
+                margin: 4px 7px;
+                font-size: 14px;
+            }
+
+            main {
+                width: 94%;
+                margin: 18px auto;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile img {
+                width: 150px;
+                height: 190px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="dautrang">
+        <h1>GIỚI THIỆU BẢN THÂN</h1>
+        <p>Xin chào! Rất vui vì bạn ghé thăm trang web của mình.</p>
+    </header>
+
+    <nav>
+        <a href="#thongtin">Thông tin</a>
+        <a href="#sothich">Sở thích</a>
+        <a href="#muctieu">Mục tiêu</a>
+        <a href="#kehoach">Kế hoạch</a>
+        <a href="#lienhe">Liên hệ</a>
+    </nav>
+
+    <main>
+        <section id="thongtin">
+            <h2>1. Thông tin cá nhân</h2>
+            <div class="profile">
+                <img src="avatar.jpg" alt="Ảnh đại diện của tôi">
+                <div class="profile-text">
+                    <p>Xin chào, mình tên là Huỳnh Võ Minh Khoa.</p>
+                    <p>Mình hiện là sinh viên ngành <b>Công nghệ thông tin</b>.</p>
+                    <p>Mình thích tìm hiểu công nghệ, học hỏi kiến thức mới và rèn luyện kỹ năng của bản thân.</p>
+                    <p><i>“Học hỏi mỗi ngày, tiến bộ từng bước.”</i></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sothich">
+            <h2>2. Sở thích</h2>
+            <p>Trong thời gian rảnh, mình thường:</p>
+            <ul>
+                <li>Nghe nhạc và xem phim.</li>
+                <li>Chơi game và giải trí cùng bạn bè.</li>
+                <li>Tìm hiểu công nghệ và học lập trình.</li>
+                <li>Khám phá những kiến thức mới trên Internet.</li>
+            </ul>
+        </section>
+
+        <section id="muctieu">
+            <h2>3. Mục tiêu học tập</h2>
+            <p>Mình đặt ra một số mục tiêu để phát triển bản thân:</p>
+            <ol>
+                <li>Nắm vững kiến thức cơ bản về lập trình.</li>
+                <li>Rèn luyện kỹ năng đọc hiểu code và viết code.</li>
+                <li>Thực hành nhiều bài tập và dự án thực tế.</li>
+                <li>Phát triển kỹ năng làm việc nhóm và giao tiếp.</li>
+            </ol>
+        </section> 
+
+         <section id="muctieu">
+            <h2>4. Những kĩ năng bản thân đã nắm vững</h2>
+            <p>Những kĩ năng mình đã biết:</p>
+            <ol>
+                <li>Đọc và hiểu code Python, C++ và C# .</li>
+                <li>Biết cách sử dụng các công cụ để áp dụng và các bài tập code.</li>
+                <li>Có kỹ năng làm việc nhóm và giao tiếp (thông qua github và discord, zalo).</li>
+            </ol>
+        </section>
+
+        <section id="kehoach">
+            <h2>5. Kế hoạch phát triển</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Mục tiêu</th>
+                        <th>Kết quả mong muốn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hiện tại</td>
+                        <td>Học HTML và CSS</td>
+                        <td>Thiết kế website quản lý tác vụ </td>
+                    </tr>
+                    <tr>
+                        <td>Sắp tới</td>
+                        <td>Học JavaScript</td>
+                        <td>Tạo trang web có tương tác</td>
+                    </tr>
+                    <tr>
+                        <td>Tương lai</td>
+                        <td>Thực hiện dự án cá nhân</td>
+                        <td>Tạo ra nhiều sản phẩm có giá trị</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="lienhe" class="contact">
+            <h2>6. Liên hệ</h2>
+            <p>Email: <a href="mailto:huynhvominhkhoa2020t@gmail.com">huynhvominhkhoa2020t@gmail.com</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Trang Facebook</a></p>
+            <p>Bạn có thể thay các thông tin mẫu bằng thông tin liên hệ của mình.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><b>© 2026 - Trang web giới thiệu bản thân</b></p>
+        <p>Được thiết kế bằng HTML và CSS.</p>
+        <p><a href="#dautrang">↑ Về đầu trang</a></p>
+    </footer>
+</body>
+</html>
