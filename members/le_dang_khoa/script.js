@@ -229,38 +229,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 9. DIRECTORS CONTROLLER
-    const directorItems = document.querySelectorAll(".director-item");
-    const directorMainImg = document.getElementById("directorMainImg");
-    const directorRoleText = document.getElementById("directorRoleText");
+    // 9. EXPERTISE / DIRECTORS CONTROLLER
+    const directorRows = document.querySelectorAll(".director-row");
+    const directorPreviewImg = document.getElementById("directorPreviewImg");
 
-    directorItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            directorItems.forEach(i => i.classList.remove("active"));
-            item.classList.add("active");
+    directorRows.forEach(row => {
+        row.addEventListener("mouseenter", () => {
+            directorRows.forEach(r => r.classList.remove("active"));
+            row.classList.add("active");
 
-            const newImg = item.getAttribute("data-img");
-            const newRole = item.getAttribute("data-role");
+            const newImg = row.getAttribute("data-img");
+            const roleSpan = row.querySelector(".role");
 
-            if (directorMainImg && newImg) {
-                directorMainImg.style.opacity = "0.2";
-                directorMainImg.style.transform = "scale(0.96)";
+            if (directorPreviewImg && newImg) {
+                directorPreviewImg.style.opacity = "0.2";
+                directorPreviewImg.style.transform = "scale(0.99)";
                 
                 setTimeout(() => {
-                    directorMainImg.src = newImg;
-                    directorMainImg.style.opacity = "1";
-                    directorMainImg.style.transform = "scale(1)";
+                    directorPreviewImg.src = newImg;
+                    directorPreviewImg.style.opacity = "1";
+                    directorPreviewImg.style.transform = "scale(1)";
                 }, 150);
-            }
-
-            if (directorRoleText && newRole) {
-                directorRoleText.textContent = newRole;
             }
 
             playHoverSound();
         });
     });
-
     // 10. TYPING EFFECT
     const words = ["VIDEO EDITOR", "CREATIVE CONCEPT", "CAPCUT SPECIALIST", "DAVINCI RESOLVER"];
     let wordIndex = 0;
