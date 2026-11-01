@@ -37,7 +37,6 @@
             display: flex;
         }
 
-        /* ---------------- SIDEBAR TRÁI CỐ ĐỊNH ---------------- */
         aside.sidebar {
             position: fixed;
             top: 0;
@@ -126,7 +125,6 @@
             text-decoration: underline;
         }
 
-        /* ---------------- NỘI DUNG CUỘN BÊN PHẢI ---------------- */
         main.content {
             margin-left: 270px;
             padding: 3rem 4rem;
@@ -314,7 +312,6 @@
     <aside class="sidebar">
         <div class="avatar-wrap">
             <div class="avatar-box">
-                <!-- Sử dụng trực tiếp file ảnh trong thư mục images của bạn, không dùng link online -->
                 <img src="images/avatar.jpg" alt="Avatar" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:white;font-size:2rem;font-weight:700;\'>NTH</span>'">
             </div>
         </div>
@@ -352,30 +349,7 @@
             </div>
         </section>
 
-        <!-- 2. EXPERIENCE -->
-        <section id="experience">
-            <h2 class="section-heading">Experience</h2>
-
-            <div class="item-block">
-                <div class="item-info">
-                    <div class="item-title">Trưởng nhóm & Quản trị Repository</div>
-                    <div class="item-subtitle">Đồ án Web Nhóm 6 - UTH</div>
-                    <p>Khởi tạo cấu trúc dự án, cấu hình triển khai GitHub Pages và điều phối quá trình nộp bài của các thành viên.</p>
-                </div>
-                <div class="item-date">Tháng 9/2026 - Hiện tại</div>
-            </div>
-
-            <div class="item-block">
-                <div class="item-info">
-                    <div class="item-title">Lập trình viên Frontend</div>
-                    <div class="item-subtitle">Phát triển Portfolio & Hub Portal</div>
-                    <p>Xây dựng hệ thống trang chủ trung tâm kết nối các trang thành viên và chuẩn hóa giao diện tương thích đa nền tảng.</p>
-                </div>
-                <div class="item-date">Tháng 10/2026 - Hiện tại</div>
-            </div>
-        </section>
-
-        <!-- 3. EDUCATION -->
+        <!-- 2. EDUCATION -->
         <section id="education">
             <h2 class="section-heading">Education</h2>
 
@@ -389,7 +363,7 @@
             </div>
         </section>
 
-        <!-- 4. SKILLS -->
+        <!-- 3. SKILLS -->
         <section id="skills">
             <h2 class="section-heading">Skills</h2>
             <div class="subheading">Ngôn ngữ & Công cụ lập trình</div>
@@ -407,7 +381,7 @@
             </ul>
         </section>
 
-        <!-- 5. INTERESTS -->
+        <!-- 4. INTERESTS -->
         <section id="interests">
             <h2 class="section-heading">Interests</h2>
             <p class="lead-text">
@@ -415,7 +389,7 @@
             </p>
         </section>
 
-        <!-- 6. AWARDS -->
+        <!-- 5. AWARDS -->
         <section id="awards">
             <h2 class="section-heading">Awards & Certifications</h2>
             <ul class="fa-ul">
@@ -425,6 +399,50 @@
         </section>
 
     </main>
+<!-- Nút chế độ quản trị (chỉ bạn bấm vào được) -->
+<button id="adminBtn" onclick="toggleAdminMode()" style="position: fixed; bottom: 20px; right: 20px; padding: 8px 16px; background: #bd5d38; color: white; border: none; border-radius: 20px; cursor: pointer; font-size: 12px; opacity: 0.7; z-index: 9999;">
+    ✏️ Sửa nội dung
+</button>
 
+<script>
+    const SECRET_PIN = "22022006"; // Đặt mật khẩu riêng của bạn tại đây
+    let isEditing = false;
+
+    // Tự động tải lại nội dung đã sửa trước đó
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedData = localStorage.getItem('my_resume_data');
+        if (savedData) {
+            document.querySelector('main.content').innerHTML = savedData;
+        }
+    });
+
+    function toggleAdminMode() {
+        const main = document.querySelector('main.content');
+        const btn = document.getElementById('adminBtn');
+
+        if (!isEditing) {
+            const pass = prompt("Nhập mật khẩu để mở quyền chỉnh sửa:");
+            if (pass === SECRET_PIN) {
+                isEditing = true;
+                main.contentEditable = "true";
+                main.style.outline = "2px dashed #bd5d38";
+                btn.innerText = "💾 Lưu thay đổi";
+                btn.style.background = "#28a745";
+                alert("Đã bật chế độ chỉnh sửa! Bạn có thể nhấp chuột vào chữ bất kỳ trên trang để gõ lại nội dung.");
+            } else if (pass !== null) {
+                alert("Sai mật khẩu! Bạn không có quyền sửa trang này.");
+            }
+        } else {
+            // Lưu lại và khóa chế độ sửa
+            isEditing = false;
+            main.contentEditable = "false";
+            main.style.outline = "none";
+            btn.innerText = "✏️ Sửa nội dung";
+            btn.style.background = "#bd5d38";
+            localStorage.setItem('my_resume_data', main.innerHTML);
+            alert("Đã lưu các thay đổi thành công!");
+        }
+    }
+</script>
 </body>
 </html>
