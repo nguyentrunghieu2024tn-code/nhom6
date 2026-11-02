@@ -1,307 +1,309 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu bản thân</title>
+    <title>Huỳnh Võ Minh Khoa | Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+        <link rel="stylesheet" href="style.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            color: #f7efff;
-            background: #100d1c;
-        }
-
-        header {
-            padding: 45px 20px;
-            text-align: center;
-            color: #fff7fc;
-            background: linear-gradient(120deg, #3988f5 0%, #8654e8 52%, #e34f9d 100%);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 34px;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            margin: 8px 0 0;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 12px;
-            text-align: center;
-            background: #211638;
-            border-bottom: 1px solid #51365f;
-            box-shadow: 0 3px 14px rgba(16, 8, 28, 0.34);
-        }
-
-        nav a {
-            display: inline-block;
-            margin: 4px 10px;
-            color: #d8b4fe;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #55b8f5;
-            text-decoration: underline;
-        }
-
-        main {
-            width: 90%;
-            max-width: 950px;
-            margin: 28px auto;
-        }
-
-        section {
-            margin-bottom: 22px;
-            padding: 24px;
-            background: #211638;
-            border: 1px solid #51365f;
-            border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(16, 8, 28, 0.30);
-            scroll-margin-top: 80px;
-        }
-
-        h2 {
-            margin-top: 0;
-            padding-bottom: 8px;
-            color: #55b8f5;
-            border-bottom: 2px solid #624078;
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .profile img {
-            display: block;
-            width: 165px;
-            height: 210px;
-            object-fit: cover;
-            object-position: center top;
-            border: 4px solid #a855f7;
-            border-radius: 14px;
-            box-shadow: 0 4px 14px rgba(168, 85, 247, 0.24);
-        }
-
-        .profile-text {
-            flex: 1;
-        }
-
-        .highlight {
-            color: #d8b4fe;
-            font-weight: bold;
-        }
-
-        ul, ol {
-            padding-left: 25px;
-        }
-
-        li {
-            margin: 6px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #3b5278;
-        }
-
-        th {
-            color: #fff7fc;
-            background: linear-gradient(120deg, #3988f5 0%, #8654e8 52%, #e34f9d 100%);
-        }
-
-        tbody tr:nth-child(even) {
-            background: #382052;
-        }
-
-        .contact a {
-            color: #d8b4fe;
-        }
-
-        footer {
-            padding: 22px 15px;
-            text-align: center;
-            color: #fff7fc;
-            background: #100d1c;
-        }
-
-        footer p {
-            margin: 4px 0;
-        }
-
-        footer a {
-            color: #fff7fc;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 27px;
-            }
-
-            nav {
-                position: static;
-            }
-
-            nav a {
-                margin: 4px 7px;
-                font-size: 14px;
-            }
-
-            main {
-                width: 94%;
-                margin: 18px auto;
-            }
-
-            section {
-                padding: 18px;
-            }
-
-            .profile {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile img {
-                width: 150px;
-                height: 190px;
-            }
-
-            th, td {
-                padding: 8px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <header id="dautrang">
-        <h1>GIỚI THIỆU BẢN THÂN</h1>
-        <p>Xin chào! Rất vui vì bạn ghé thăm trang web của mình.</p>
-    </header>
 
-    <nav>
-        <a href="#thongtin">Thông tin</a>
-        <a href="#sothich">Sở thích</a>
-        <a href="#muctieu">Mục tiêu</a>
-        <a href="#kehoach">Kế hoạch</a>
-        <a href="#lienhe">Liên hệ</a>
-    </nav>
+<header>
+    <div class="container navbar">
+        <a href="#home" class="logo">KHOA<span>.</span></a>
 
-    <main>
-        <section id="thongtin">
-            <h2>1. Thông tin cá nhân</h2>
-            <div class="profile">
-                <img src="avatar.jpg" alt="Ảnh đại diện của tôi">
-                <div class="profile-text">
-                    <p>Xin chào, mình tên là Huỳnh Võ Minh Khoa.</p>
-                    <p>Mình hiện là sinh viên ngành <b>Công nghệ thông tin</b>.</p>
-                    <p>Mình thích tìm hiểu công nghệ, học hỏi kiến thức mới và rèn luyện kỹ năng của bản thân.</p>
-                    <p><i>“Học hỏi mỗi ngày, tiến bộ từng bước.”</i></p>
+        <nav>
+            <a href="#about">Giới thiệu</a>
+            <a href="#hobbies">Sở thích</a>
+            <a href="#goals">Mục tiêu</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#plan">Kế hoạch</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero container" id="home">
+        <div class="hero-content">
+
+            <div>
+                <span class="hello">✦ Xin chào! Rất vui vì bạn ghé thăm</span>
+
+                <h1>
+                    Mình là<br>
+                    <span class="gradient-text">
+                        Huỳnh Võ Minh Khoa
+                    </span>
+                </h1>
+
+                <p>
+                    Sinh viên ngành Công nghệ thông tin.
+                    Mình yêu thích tìm hiểu công nghệ, học hỏi kiến thức mới
+                    và phát triển kỹ năng lập trình của bản thân.
+                </p>
+
+                <div class="buttons">
+                    <a href="#about" class="btn btn-primary">
+                        Khám phá thêm ↓
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Liên hệ với mình
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <section id="sothich">
-            <h2>2. Sở thích</h2>
-            <p>Trong thời gian rảnh, mình thường:</p>
-            <ul>
-                <li>Nghe nhạc và xem phim.</li>
-                <li>Chơi game và giải trí cùng bạn bè.</li>
-                <li>Tìm hiểu công nghệ và học lập trình.</li>
-                <li>Khám phá những kiến thức mới trên Internet.</li>
-            </ul>
-        </section>
+            <div class="avatar">
+                <img src="avatar.jpg" alt="Ảnh đại diện Huỳnh Võ Minh Khoa">
+            </div>
 
-        <section id="muctieu">
-            <h2>3. Mục tiêu học tập</h2>
-            <p>Mình đặt ra một số mục tiêu để phát triển bản thân:</p>
-            <ol>
-                <li>Nắm vững kiến thức cơ bản về lập trình.</li>
-                <li>Rèn luyện kỹ năng đọc hiểu code và viết code.</li>
-                <li>Thực hành nhiều bài tập và dự án thực tế.</li>
-                <li>Phát triển kỹ năng làm việc nhóm và giao tiếp.</li>
-            </ol>
-        </section> 
+        </div>
+    </section>
 
-         <section id="muctieu">
-            <h2>4. Những kĩ năng bản thân đã nắm vững</h2>
-            <p>Những kĩ năng mình đã biết:</p>
-            <ol>
-                <li>Đọc và hiểu code Python, C++ và C# .</li>
-                <li>Biết cách sử dụng các công cụ để áp dụng và các bài tập code.</li>
-                <li>Có kỹ năng làm việc nhóm và giao tiếp (thông qua github và discord, zalo).</li>
-            </ol>
-        </section>
+    <!-- ABOUT -->
+    <section class="content-section container" id="about">
 
-        <section id="kehoach">
-            <h2>5. Kế hoạch phát triển</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Thời gian</th>
-                        <th>Mục tiêu</th>
-                        <th>Kết quả mong muốn</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hiện tại</td>
-                        <td>Học HTML và CSS</td>
-                        <td>Thiết kế website quản lý tác vụ </td>
-                    </tr>
-                    <tr>
-                        <td>Sắp tới</td>
-                        <td>Học JavaScript</td>
-                        <td>Tạo trang web có tương tác</td>
-                    </tr>
-                    <tr>
-                        <td>Tương lai</td>
-                        <td>Thực hiện dự án cá nhân</td>
-                        <td>Tạo ra nhiều sản phẩm có giá trị</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="section-title">
+            <small>01 / ABOUT ME</small>
+            <h2>Giới thiệu bản thân</h2>
+            <p>Một chút thông tin để mọi người hiểu hơn về mình.</p>
+        </div>
 
-        <section id="lienhe" class="contact">
-            <h2>6. Liên hệ</h2>
-            <p>Email: <a href="mailto:huynhvominhkhoa2020t@gmail.com">huynhvominhkhoa2020t@gmail.com</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Trang Facebook</a></p>
-            <p>Bạn có thể thay các thông tin mẫu bằng thông tin liên hệ của mình.</p>
-        </section>
-    </main>
+        <div class="card">
+            <h3>Rất vui được làm quen!</h3>
 
-    <footer>
-        <p><b>© 2026 - Trang web giới thiệu bản thân</b></p>
-        <p>Được thiết kế bằng HTML và CSS.</p>
-        <p><a href="#dautrang">↑ Về đầu trang</a></p>
-    </footer>
+            <p>
+                Xin chào, mình tên là Huỳnh Võ Minh Khoa.
+                Hiện tại mình là sinh viên ngành Công nghệ thông tin.
+                Mình thích tìm hiểu cách công nghệ hoạt động,
+                thực hành các bài tập và học hỏi những điều mới.
+            </p>
+
+            <p style="margin-top:12px">
+                <em>"Học hỏi mỗi ngày, tiến bộ từng bước."</em>
+            </p>
+
+            <div class="facts">
+                <div class="fact">
+                    <small>Họ và tên</small>
+                    <strong>Huỳnh Võ Minh Khoa</strong>
+                </div>
+
+                <div class="fact">
+                    <small>Ngành học</small>
+                    <strong>Công nghệ thông tin</strong>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- HOBBIES -->
+    <section class="content-section container" id="hobbies">
+
+        <div class="section-title">
+            <small>02 / INTERESTS</small>
+            <h2>Sở thích của mình</h2>
+            <p>Những hoạt động mình thường làm trong thời gian rảnh.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="hobby-icon">🎧</div>
+                <h3>Âm nhạc và phim ảnh</h3>
+                <p>Nghe nhạc và xem phim để thư giãn sau giờ học.</p>
+            </div>
+
+            <div class="card">
+                <div class="hobby-icon">🎮</div>
+                <h3>Giải trí</h3>
+                <p>Chơi game và giải trí cùng bạn bè.</p>
+            </div>
+
+            <div class="card">
+                <div class="hobby-icon">💻</div>
+                <h3>Công nghệ</h3>
+                <p>Tìm hiểu công nghệ và thực hành lập trình.</p>
+            </div>
+
+            <div class="card">
+                <div class="hobby-icon">🌐</div>
+                <h3>Khám phá</h3>
+                <p>Khám phá kiến thức mới và học hỏi từ Internet.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GOALS -->
+    <section class="content-section container" id="goals">
+
+        <div class="section-title">
+            <small>03 / GOALS</small>
+            <h2>Mục tiêu học tập</h2>
+            <p>Những điều mình đang cố gắng thực hiện.</p>
+        </div>
+
+        <div class="card">
+
+            <div class="goal">
+                <span class="goal-number">01</span>
+                <p>Nắm vững kiến thức cơ bản về lập trình.</p>
+            </div>
+
+            <div class="goal">
+                <span class="goal-number">02</span>
+                <p>Rèn luyện kỹ năng đọc hiểu và viết code.</p>
+            </div>
+
+            <div class="goal">
+                <span class="goal-number">03</span>
+                <p>Thực hành nhiều bài tập và dự án thực tế.</p>
+            </div>
+
+            <div class="goal">
+                <span class="goal-number">04</span>
+                <p>Phát triển kỹ năng làm việc nhóm và giao tiếp.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section container" id="skills">
+
+        <div class="section-title">
+            <small>04 / SKILLS</small>
+            <h2>Kỹ năng bản thân</h2>
+            <p>Những kiến thức mình đã được học và thực hành.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Ngôn ngữ lập trình</h3>
+                <p>Mình đã làm quen với các ngôn ngữ:</p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Kỹ năng làm việc</h3>
+
+                <ul>
+                    <li>Sử dụng công cụ hỗ trợ học tập và lập trình.</li>
+                    <li>Làm việc nhóm và trao đổi công việc.</li>
+                    <li>Tìm kiếm tài liệu và tự học kiến thức mới.</li>
+                    <li>Sử dụng GitHub để quản lý mã nguồn.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PLAN -->
+    <section class="content-section container" id="plan">
+
+        <div class="section-title">
+            <small>05 / LEARNING ROADMAP</small>
+            <h2>Kế hoạch phát triển</h2>
+            <p>Lộ trình học tập mà mình hướng tới.</p>
+        </div>
+
+        <div class="card">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Thời gian</th>
+                            <th>Mục tiêu</th>
+                            <th>Kết quả mong muốn</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Hiện tại</td>
+                            <td>Học HTML và CSS</td>
+                            <td>Thiết kế website</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sắp tới</td>
+                            <td>Học JavaScript</td>
+                            <td>Tạo website có tương tác</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tương lai</td>
+                            <td>Thực hiện dự án cá nhân</td>
+                            <td>Tạo sản phẩm thực tế</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section container" id="contact">
+
+        <div class="section-title">
+            <small>06 / CONTACT</small>
+            <h2>Kết nối với mình</h2>
+            <p>Cảm ơn bạn đã ghé thăm website của mình!</p>
+        </div>
+
+        <div class="card contact">
+
+            <div>
+                <h3>Huỳnh Võ Minh Khoa</h3>
+                <p>
+                    Mình rất vui nếu có cơ hội trao đổi và kết nối với bạn.
+                </p>
+                <p>Email: huynhvominhkhoa2020t@gmail.com</p>
+            </div>
+
+            <div class="contact-links">
+                <a href="mailto:huynhvominhkhoa2020t@gmail.com">
+                    ✉ Email
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Facebook
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>© 2026 - Huỳnh Võ Minh Khoa</strong></p>
+    <p>
+        Thiết kế bằng HTML và CSS |
+        <a href="#home">↑ Trở về đầu trang</a>
+    </p>
+</footer>
+
 </body>
 </html>
