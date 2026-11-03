@@ -1,106 +1,365 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio & CV - Trần Quốc Bảo | Front-end Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & CV - Trần Quốc Bảo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* --- BIẾN MÀU TÍM DARK THEME --- */
+    :root {
+      --bg-color: #0b0719;
+      --card-bg: #161129;
+      --card-hover: #1f1838;
+      --accent-purple: #8b5cf6;
+      --accent-pink: #ec4899;
+      --gradient-btn: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(11, 7, 25, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-purple);
+    }
+
+    /* --- CONTAINER NỘI DUNG --- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-card {
+      background: linear-gradient(145deg, #181233, #110c24);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 50px;
+      margin: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .hero-text .subtitle {
+      color: var(--accent-purple);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background: var(--gradient-btn);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+    }
+
+    .avatar-img {
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 3px solid var(--accent-purple);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    }
+
+    /* --- PHẦN TIÊU ĐỀ KHỐI --- */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 25px;
+      background: var(--accent-purple);
+      border-radius: 4px;
+    }
+
+    /* --- BỐ CỤC CARD GRID --- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(168, 85, 247, 0.5);
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    .info-list strong {
+      color: var(--text-primary);
+    }
+
+    /* --- BADGES KỸ NĂNG --- */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      background: rgba(139, 92, 246, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* --- DỰ ÁN ITEM --- */
+    .project-card {
+      margin-bottom: 15px;
+    }
+
+    .project-title {
+      color: #c084fc;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    /* --- RESPONSIVE MOBILE --- */
+    @media (max-width: 768px) {
+      .hero-card {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Đường dẫn gọi đúng file ảnh avatar.png trong thư mục images -->
-        <img src="images/avatar.png" alt="Ảnh đại diện Trần Quốc Bảo" class="avatar-img">
 
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">BaoTran.</div>
+    <ul class="nav-links">
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO SECTION (TƯƠNG TỰ CÁC BẠN) -->
+    <div class="hero-card" id="about">
+      <div class="hero-text">
         <h1>Trần Quốc Bảo</h1>
-        <p class="subtitle">Sinh viên ngành Công nghệ Thông tin - Trường Đại học Giao thông Vận tải TP.HCM (UTH)</p>
-        <p class="subtitle" style="font-weight: bold; color: #a78bfa;">Định hướng: Front-end Developer / Web Creator</p>
-
-        <!-- Giới thiệu bản thân -->
-        <div class="card">
-            <h2>Giới thiệu bản thân</h2>
-            <p>Chào bạn, tôi là Trần Quốc Bảo, thành viên Nhóm 6 UTH. Là sinh viên năm 3 ngành Công nghệ Thông tin với định hướng trở thành một <strong>Front-end Developer</strong> chuyên nghiệp. Tôi có niềm đam mê lớn với việc kiến tạo những giao diện web hiện đại, mượt mà, tối ưu trải nghiệm người dùng (UX/UI) và tương thích tốt trên mọi thiết bị.</p>
-            <p>Luôn sẵn sàng tiếp thu công nghệ mới, tỉ mỉ trong từng dòng mã CSS/JavaScript và có tinh thần trách nhiệm cao trong làm việc nhóm.</p>
+        <div class="subtitle">Front-end Developer / Web Creator</div>
+        <p>Sinh viên năm 3 ngành Công nghệ Thông tin tại Trường Đại học Giao thông Vận tải TP.HCM (UTH). Đam mê thiết kế giao diện web hiện đại, mượt mà và tối ưu trải nghiệm người dùng (UX/UI).</p>
+        <div class="btn-group">
+          <a href="#projects" class="btn-primary">Khám phá dự án <i class="fas fa-arrow-down"></i></a>
+          <a href="#contact" class="btn-secondary">Liên hệ ngay</a>
         </div>
-
-        <!-- Học tập & Giáo dục -->
-        <div class="card">
-            <h2>Học tập & Giáo dục</h2>
-            <ul>
-                <li><strong>Trường:</strong> Trường Đại học Giao thông Vận tải TP.HCM (UTH)</li>
-                <li><strong>Mã số sinh viên:</strong> 052206004227</li>
-                <li><strong>Niên khóa:</strong> Khóa K24 (2024 - 2028)</li>
-                <li><strong>Chuyên ngành:</strong> Công nghệ Thông tin</li>
-                <li><strong>Định hướng học tập:</strong> Tập trung nghiên cứu sâu về kiến trúc Web Frontend, Responsive Design, tối ưu hiệu suất tải trang và tương tác người dùng.</li>
-            </ul>
-        </div>
-
-        <!-- Kỹ năng chuyên môn Front-end -->
-        <div class="card">
-            <h2>Kỹ năng & Công nghệ</h2>
-            <ul>
-                <li><strong>Ngôn ngữ Front-end:</strong> HTML5 (Semantic, Accessible), CSS3 (Flexbox, Grid, Responsive Design), JavaScript (ES6+).</li>
-                <li><strong>Thư viện & Framework:</strong> Cơ bản về React.js, quản lý trạng thái component.</li>
-                <li><strong>Công cụ & Môi trường:</strong> Visual Studio Code, Git/GitHub (Quản lý mã nguồn & Deploy GitHub Pages).</li>
-                <li><strong>Kỹ năng bổ trợ:</strong> C/C++, Python, SQL cơ bản, tối ưu UI/UX, Debugging.</li>
-                <li><strong>Kỹ năng mềm:</strong> Làm việc nhóm, Quản lý thời gian, Giải quyết vấn đề, Tự học tài liệu quốc tế.</li>
-            </ul>
-        </div>
-
-        <!-- Dự án tiêu biểu -->
-        <div class="card">
-            <h2>Dự án cá nhân & Môn học</h2>
-            <ul>
-                <li>
-                    <strong>Hệ thống Portfolio & Digital CV cá nhân (Đang phát triển):</strong>
-                    Xây dựng trang web giới thiệu bản thân bằng HTML/CSS/JS thuần, thiết kế giao diện chuẩn Responsive, bố cục trực quan, màu sắc hiện đại chuẩn phong cách Dark Mode.
-                </li>
-                <li>
-                    <strong>Xây dựng Giao diện Quản lý Bán hàng Pet Store:</strong>
-                    Phân tích thiết kế hệ thống giao diện, tối ưu hóa các luồng thao tác người dùng (User Flow) thông qua sơ đồ Use Case, Sequence Diagram và cơ sở dữ liệu ERD.
-                </li>
-                <li>
-                    <strong>Ứng dụng Cryptography (AnNinhThongTin_Project):</strong>
-                    Tham gia phát triển logic xử lý và giao diện tương trợ cho các thuật toán mã hóa AES-128, Diffie-Hellman, SHA-256 và ECDSA bằng Python.
-                </li>
-                <li>
-                    <strong>UDM_11 - Multi-file Downloader:</strong>
-                    Xây dựng ứng dụng desktop hỗ trợ tải file đồng thời với giao diện đồ họa thân thiện, dễ nhìn.
-                </li>
-            </ul>
-        </div>
-
-        <!-- Sở thích cá nhân -->
-        <div class="card">
-            <h2>Sở thích cá nhân</h2>
-            <ul>
-                <li>
-                    <strong>Game giải trí:</strong> Yêu thích các dòng game mô phỏng quản lý, xây dựng thành phố (Cities: Skylines) và chiến thuật đồng đội (Liên Quân Mobile - Arena of Valor). Giúp rèn luyện tư duy logic, lập kế hoạch chiến lược và giải tỏa căng thẳng sau giờ học.
-                </li>
-                <li>
-                    <strong>Du lịch & Khám phá:</strong> Đam mê trải nghiệm những vùng đất mới, thưởng thức ẩm thực đặc sản địa phương và tìm hiểu văn hóa vùng miền để mở rộng góc nhìn cuộc sống.
-                </li>
-                <li>
-                    <strong>Khoa học & Công nghệ:</strong> Luôn cập nhật các xu hướng công nghệ web mới, khám phá ứng dụng Trí tuệ nhân tạo (AI), các mô hình ngôn ngữ lớn (LLMs) và công nghệ phần mềm hiện đại.
-                </li>
-                <li>
-                    <strong>Âm nhạc:</strong> Thường xuyên nghe nhạc lofi/instrumental khi lập trình để duy trì sự tập trung cao độ, tìm kiếm cảm hứng sáng tạo giao diện.
-                </li>
-            </ul>
-        </div>
-
-        <!-- Thông tin liên hệ -->
-        <div class="card">
-            <h2>Thông tin liên hệ</h2>
-            <ul>
-                <li><strong>Email:</strong> baotran.uth@gmail.com</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com" target="_blank" style="color: inherit;">github.com/tranquocbao</a></li>
-                <li><strong>Địa chỉ:</strong> TP. Hồ Chí Minh, Việt Nam</li>
-            </ul>
-        </div>
-
-        <!-- Nút quay lại trang chủ nhóm -->
-        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-            <a href="../../index.html" class="back-btn" style="display: inline-block; padding: 10px 20px; background-color: #9333ea; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">← Quay lại Trang Chủ Nhóm</a>
-        </div>
+      </div>
+      <div class="avatar-wrapper">
+        <!-- Thay link ảnh của bạn vào đây -->
+        <img src="https://via.placeholder.com/260" alt="Trần Quốc Bảo" class="avatar-img">
+      </div>
     </div>
+
+    <!-- HỌC TẬP & KỸ NĂNG -->
+    <h2 class="section-title">Học tập & Kỹ năng</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3><i class="fas fa-graduation-cap" style="color:#a855f7;"></i> Giáo dục</h3>
+        <ul class="info-list" style="margin-top: 15px;">
+          <li><strong>Trường:</strong> Đại học Giao thông Vận tải TP.HCM (UTH)</li>
+          <li><strong>Mã số SV:</strong> 052206004227</li>
+          <li><strong>Niên khóa:</strong> 2024 - 2028 (Khoá K24)</li>
+          <li><strong>Chuyên ngành:</strong> Công nghệ Thông tin</li>
+        </ul>
+      </div>
+
+      <div class="card" id="skills">
+        <h3><i class="fas fa-code" style="color:#ec4899;"></i> Công nghệ & Kỹ năng</h3>
+        <div class="badges">
+          <span class="badge">HTML5 (Semantic)</span>
+          <span class="badge">CSS3 (Flexbox/Grid)</span>
+          <span class="badge">JavaScript (ES6+)</span>
+          <span class="badge">React.js Cơ bản</span>
+          <span class="badge">VS Code</span>
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">C / C++</span>
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Tối ưu UI/UX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DỰ ÁN CÁ NHÂN -->
+    <h2 class="section-title" id="projects">Dự án Cá nhân & Môn học</h2>
+    <div class="card">
+      <div class="project-card">
+        <div class="project-title">1. Hệ thống Portfolio & Digital CV cá nhân</div>
+        <p style="color: var(--text-secondary);">Trang giới thiệu cá nhân chuẩn Responsive, tối ưu bố cục và giao diện Dark Mode ấn tượng.</p>
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+      <div class="project-card">
+        <div class="project-title">2. Xây dựng Giao diện Quản lý Bán hàng Pet Store</div>
+        <p style="color: var(--text-secondary);">Phân tích thiết kế hệ thống, tối ưu luồng thao tác (User Flow) qua sơ đồ Use Case, Sequence Diagram và cơ sở dữ liệu ERD.</p>
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+      <div class="project-card">
+        <div class="project-title">3. Ứng dụng Cryptography (AnNinhThongTin_Project)</div>
+        <p style="color: var(--text-secondary);">Tham gia phát triển logic xử lý thuật toán mã hóa AES-128, Diffie-Hellman, SHA-256 và ECDSA bằng Python.</p>
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+      <div class="project-card">
+        <div class="project-title">4. UDM_11 - Multi-file Downloader</div>
+        <p style="color: var(--text-secondary);">Xây dựng ứng dụng desktop hỗ trợ tải file đồng thời với giao diện đồ họa thân thiện, dễ nhìn.</p>
+      </div>
+    </div>
+
+    <!-- THÔNG TIN LIÊN HỆ -->
+    <h2 class="section-title" id="contact">Thông tin liên hệ</h2>
+    <div class="card grid-2">
+      <ul class="info-list">
+        <li><strong><i class="fas fa-envelope"></i> Email:</strong> baotran.uth@gmail.com</li>
+        <li><strong><i class="fab fa-github"></i> GitHub:</strong> github.com/tranquocbao</li>
+        <li><strong><i class="fas fa-map-marker-alt"></i> Địa chỉ:</strong> TP. Hồ Chí Minh, Việt Nam</li>
+      </ul>
+      <div style="text-align: right; display: flex; align-items: center; justify-content: flex-end;">
+        <a href="https://github.com/nguyentrunghieu2024tn-code/nhom6" class="btn-primary"><i class="fas fa-arrow-left"></i> Quay lại Trang Chủ Nhóm</a>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
