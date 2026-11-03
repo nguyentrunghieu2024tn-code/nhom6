@@ -278,6 +278,50 @@
             margin: 8px 0;
         }
 
+
+
+        /* TEAM PROJECTS */
+        .projects-block {
+            margin-top: 35px;
+            scroll-margin-top: 90px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .project-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .project-card .tags {
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: auto;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: var(--gradient);
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #8654e855;
+        }
+
         /* GOALS */
         .goal {
             display: flex;
